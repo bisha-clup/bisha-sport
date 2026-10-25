@@ -1,25 +1,581 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>نادي علوم الرياضة - جامعة بيشة</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&display=swap">
-<style>
-:root{--blue:#0b3d7a;--blue-d:#072a57;--blue-l:#e6eef8;--bg:#f4f6f9;--ink:#1c2430;--mute:#5b6675;--line:#d5deea}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans Arabic",Tahoma,sans-serif;line-height:1.8}
-header{background:var(--blue);color:#fff;padding:18px 20px;box-shadow:0 2px 10px #0003}
-.wrap{max-width:900px;margin:auto}
-.head{display:flex;align-items:center;gap:16px}
-.logo{width:70px;height:70px;border-radius:50%;background:#fff;object-fit:contain;padding:4px;flex:none}
-header h1{margin:0;font-size:1.5rem}
-header p{margin:0;opacity:.85}
-nav{background:var(--blue-d);display:flex;justify-content:center;gap:6px;flex-wrap:wrap;padding:6px}
-nav a{color:#fff;text-decoration:none;padding:6px 16px;border-radius:20px;font-size:.95rem}
-nav a:hover,nav a:focus-visible{background:#ffffff26;outline:none}
-main{padding:20px 14px 40px}
-section{background:#fff;border-radius:18px;padding:22px;margin-bottom:22px;box-shadow:0 2px 12px #0b3d7a14;border-inline-start:6px solid var(--blue)}
-h2{margin:0 0 14px;color:var(--blue);font-size:1.35rem}
-.ad{border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-bottom:16px}
-.ad img{width:100%;display:block;background:var(--blue-l);min-height:1
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نادي علوم الرياضة - جامعة بيشة</title>
+    <!-- خط تجوال من Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <!-- أيقونات Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-blue: #003366; /* الأزرق الملكي الخاص بجامعة بيشة */
+            --secondary-blue: #0056b3;
+            --accent-gold: #d4af37;
+            --bg-light: #f4f7fa;
+            --white: #ffffff;
+            --text-dark: #222222;
+            --text-muted: #666666;
+            --border-color: #e0e6ed;
+            --success-green: #28a745;
+            --danger-red: #dc3545;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* الهيدر / الشريط العلوي */
+        header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: var(--white);
+            padding: 25px 20px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            position: relative;
+        }
+
+        header .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 8px;
+        }
+
+        header .logo-icon {
+            font-size: 2.2rem;
+            color: var(--accent-gold);
+        }
+
+        header h1 {
+            font-size: 1.9rem;
+            font-weight: 800;
+        }
+
+        header p {
+            font-size: 1.05rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        /* الحاوية الرئيسية */
+        .container {
+            max-width: 900px;
+            margin: 25px auto;
+            padding: 0 15px;
+        }
+
+        /* الكروت والبطاقات */
+        .card {
+            background: var(--white);
+            border-radius: 14px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.4rem;
+            color: var(--primary-blue);
+            border-bottom: 3px solid var(--accent-gold);
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        .section-title i {
+            color: var(--secondary-blue);
+        }
+
+        /* قسم الإعلانات والبطولة */
+        .announcement-banner {
+            background: linear-gradient(135deg, #eef5ff, #ffffff);
+            border-right: 5px solid var(--primary-blue);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .announcement-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .announcement-header h3 {
+            color: var(--primary-blue);
+            font-size: 1.6rem;
+            margin-bottom: 5px;
+        }
+
+        .announcement-badge {
+            display: inline-block;
+            background-color: var(--accent-gold);
+            color: #000;
+            font-weight: 700;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .info-box {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        .info-box i {
+            font-size: 1.5rem;
+            color: var(--secondary-blue);
+            margin-bottom: 8px;
+        }
+
+        .info-box h4 {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 5px;
+        }
+
+        .info-box p {
+            font-weight: 700;
+            color: var(--primary-blue);
+            font-size: 1rem;
+        }
+
+        .rules-list {
+            list-style: none;
+            margin: 15px 0;
+        }
+
+        .rules-list li {
+            position: relative;
+            padding-right: 25px;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .rules-list li::before {
+            content: "\f058";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            right: 0;
+            color: var(--secondary-blue);
+        }
+
+        .contact-box {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .contact-box a {
+            color: #25d366;
+            font-weight: 800;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        /* قسم نماذج التعليقات */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 0.95rem;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: var(--secondary-blue);
+            box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.1);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .btn {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-blue);
+        }
+
+        .btn-sm {
+            padding: 6px 12px;
+            font-size: 0.85rem;
+        }
+
+        .btn-success { background-color: var(--success-green); }
+        .btn-danger { background-color: var(--danger-red); }
+
+        /* قائمة التعليقات المقبولة */
+        .comments-list {
+            margin-top: 20px;
+        }
+
+        .comment-item {
+            background: #f9fbfd;
+            border-right: 4px solid var(--secondary-blue);
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+        }
+
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px;
+        }
+
+        .comment-author {
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        .comment-date {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .comment-text {
+            color: #444;
+            font-size: 0.95rem;
+        }
+
+        /* لوحة تحكم المشرف */
+        .admin-panel {
+            background-color: #fff9e6;
+            border: 1px dashed var(--accent-gold);
+            margin-top: 40px;
+        }
+
+        .pending-item {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        /* الفوتر / أسفل الصفحة */
+        footer {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 0.95rem;
+        }
+
+        .alert-msg {
+            padding: 10px;
+            border-radius: 6px;
+            margin-top: 10px;
+            display: none;
+        }
+        .alert-success { background: #d4edda; color: #155724; }
+    </style>
+</head>
+<body>
+
+    <!-- الشريط العلوي -->
+    <header>
+        <div class="logo-container">
+            <i class="fa-solid fa-trophy logo-icon"></i>
+            <h1>نادي علوم الرياضة</h1>
+        </div>
+        <p>جامعة بيشة</p>
+    </header>
+
+    <div class="container">
+
+        <!-- قسم الإعلانات -->
+        <div class="card">
+            <h2 class="section-title"><i class="fa-solid fa-bullhorn"></i> قسم الإعلانات والفعاليات</h2>
+            
+            <div class="announcement-banner">
+                <div class="announcement-header">
+                    <h3>🏆 بطولة كلية التربية والتنمية البشرية لكرة القدم</h3>
+                    <span class="announcement-badge"><i class="fa-regular fa-calendar-days"></i> فترة التسجيل: من الأحد 25/10 حتى الخميس 29/10</span>
+                </div>
+
+                <div class="info-grid">
+                    <div class="info-box">
+                        <i class="fa-solid fa-users"></i>
+                        <h4>عدد الفرق</h4>
+                        <p>6 فرق (الأولوية للأسبق)</p>
+                    </div>
+                    <div class="info-box">
+                        <i class="fa-regular fa-clock"></i>
+                        <h4>موعد البطولة</h4>
+                        <p>من 21/5 إلى 25/5</p>
+                    </div>
+                    <div class="info-box">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <h4>المكان</h4>
+                        <p>الملعب الجامعي (بالكلية)</p>
+                    </div>
+                    <div class="info-box">
+                        <i class="fa-solid fa-user-check"></i>
+                        <h4>الفئة المستهدفة</h4>
+                        <p>طلاب كلية التربية والتنمية البشرية</p>
+                    </div>
+                </div>
+
+                <h4 style="color: var(--primary-blue); margin-top: 15px;"><i class="fa-solid fa-clipboard-list"></i> الشروط والتعليمات:</h4>
+                <ul class="rules-list">
+                    <li>المشاركة لطلاب كلية التربية والتنمية البشرية فقط.</li>
+                    <li>يتكون كل فريق من عدد محدد من اللاعبين، مع تحديد قائد للفريق.</li>
+                    <li>الالتزام بالروح الرياضية واحترام المنافسين والحكام.</li>
+                    <li>تمنع الاعتراضات غير اللائقة أو السلوك غير الرياضي.</li>
+                    <li>الحضور قبل موعد المباراة بـ 15 دقيقة على الأقل.</li>
+                    <li>الفريق المتأخر عن الموعد المحدد قد يُعدّ مستحقاً وفق قرار اللجنة المنظمة.</li>
+                    <li>الالتزام بملبس الزي الرياضي المناسب واتباع تعليمات المنظمين.</li>
+                    <li>قرارات اللجنة المنظمة والحكام ملزمة.</li>
+                </ul>
+
+                <div class="contact-box">
+                    <p><i class="fa-brands fa-whatsapp"></i> للتسجيل والتواصل عبر واتساب:</p>
+                    <p style="font-size: 1.2rem; margin-top: 5px;"><strong>عبدالله جلوي</strong> | <a href="https://wa.me/966501561565" target="_blank">0501561565</a></p>
+                    <p style="font-size: 0.85rem; opacity: 0.8; margin-top: 5px;">بكم .. نحقق التميز</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- قسم عن النادي (قابل للتعديل بسهولة) -->
+        <div class="card">
+            <h2 class="section-title"><i class="fa-solid fa-circle-info"></i> عن نادي علوم الرياضة</h2>
+            <p style="color: #444; font-size: 1.05rem;">
+                يسعى **نادي علوم الرياضة بجامعة بيشة** إلى تعزيز النشاط البدني والرياضي بين الطلاب، واكتشاف المواهب الرياضية وتنميتها، وتنظيم البطولات والفعاليات الرياضية التي تساهم في بناء بيئة جامعية حيوية وصحية.
+            </p>
+        </div>
+
+        <!-- قسم إضافة مشاركة/تعليق للزوار -->
+        <div class="card">
+            <h2 class="section-title"><i class="fa-solid fa-comments"></i> مشاركات واستفسارات الزوار</h2>
+            
+            <form id="commentForm">
+                <div class="form-group">
+                    <label for="userName">الاسم الكريم:</label>
+                    <input type="text" id="userName" class="form-control" placeholder="أدخل اسمك هنا..." required>
+                </div>
+                <div class="form-group">
+                    <label for="userComment">المشاركة / التعليق:</label>
+                    <textarea id="userComment" class="form-control" placeholder="كتب تعليقك أو استفسارك هنا..." required></textarea>
+                </div>
+                <button type="submit" class="btn"><i class="fa-solid fa-paper-plane"></i> إرسال المشاركة</button>
+            </form>
+            <div id="msgBox" class="alert-msg alert-success">تم إرسال مشاركتك بنجاح! وستظهر في الصفحة فور مراجعتها وقبولها من مشرف النادي.</div>
+
+            <!-- عرض المشاركات المقبولة فقط -->
+            <div style="margin-top: 30px;">
+                <h3 style="color: var(--primary-blue); font-size: 1.1rem; margin-bottom: 15px;">المشاركات المعتمدة:</h3>
+                <div id="approvedComments" class="comments-list">
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">لا توجد مشاركات معروضة حالياً.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- لوحة تحكم المشرف (قبول/رفض التعليقات) -->
+        <div class="card admin-panel">
+            <h2 class="section-title" style="color: #856404; border-bottom-color: #856404;"><i class="fa-solid fa-user-shield"></i> لوحة إدارة الموافقة على التعليقات (للمشرف)</h2>
+            
+            <div id="adminAuth">
+                <p style="margin-bottom: 10px; font-size: 0.9rem;">أدخل كلمة المرور لعرض الطلبات المعلقة (كلمة المرور الافتراضية: <strong>1289</strong>):</p>
+                <div style="display: flex; gap: 10px; max-width: 300px;">
+                    <input type="password" id="adminPass" class="form-control" placeholder="كلمة المرور">
+                    <button onclick="loginAdmin()" class="btn btn-sm">دخول</button>
+                </div>
+            </div>
+
+            <div id="adminContent" style="display: none; margin-top: 20px;">
+                <h4 style="margin-bottom: 10px; color: var(--primary-blue);">طلبات التعليقات المعلقة بانتظار موافقتك:</h4>
+                <div id="pendingComments">
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">لا توجد طلبات جديدة معلقة.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- الفوتر -->
+    <footer>
+        <p>نادي علوم الرياضة © 2026</p>
+        <p style="font-size: 0.85rem; opacity: 0.8; margin-top: 4px;">جامعة بيشة</p>
+    </footer>
+
+    <!-- برمجة JavaScript لمعالجة التعليقات والموافقة عليها -->
+    <script>
+        // إعداد التخزين المحلي للتعليقات
+        let comments = JSON.parse(localStorage.getItem('club_comments')) || [];
+
+        const commentForm = document.getElementById('commentForm');
+        const approvedContainer = document.getElementById('approvedComments');
+        const pendingContainer = document.getElementById('pendingComments');
+        const msgBox = document.getElementById('msgBox');
+
+        // إرسال التعليق (يحفظ بظروف "معلق" pending)
+        commentForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('userName').value.trim();
+            const text = document.getElementById('userComment').value.trim();
+
+            if(name && text) {
+                const newComment = {
+                    id: Date.now(),
+                    name: name,
+                    text: text,
+                    status: 'pending', // حالة التعليق بانتظار موافقة المشرف
+                    date: new Date().toLocaleDateString('ar-SA')
+                };
+
+                comments.push(newComment);
+                saveAndRender();
+
+                commentForm.reset();
+                msgBox.style.display = 'block';
+                setTimeout(() => msgBox.style.display = 'none', 4000);
+            }
+        });
+
+        // حفظ وعرض التعليقات المقبولة والمعلقة
+        function saveAndRender() {
+            localStorage.setItem('club_comments', JSON.stringify(comments));
+            renderApproved();
+            renderPending();
+        }
+
+        // عرض التعليقات المقبولة فقط
+        function renderApproved() {
+            const approved = comments.filter(c => c.status === 'approved');
+            if(approved.length === 0) {
+                approvedContainer.innerHTML = '<p style="color: var(--text-muted); font-size: 0.9rem;">لا توجد مشاركات معروضة حالياً.</p>';
+                return;
+            }
+
+            approvedContainer.innerHTML = approved.map(c => `
+                <div class="comment-item">
+                    <div class="comment-header">
+                        <span class="comment-author">${escapeHtml(c.name)}</span>
+                        <span class="comment-date">${c.date}</span>
+                    </div>
+                    <div class="comment-text">${escapeHtml(c.text)}</div>
+                </div>
+            `).join('');
+        }
+
+        // عرض الطلبات المعلقة في لوحة الإدارة
+        function renderPending() {
+            const pending = comments.filter(c => c.status === 'pending');
+            if(pending.length === 0) {
+                pendingContainer.innerHTML = '<p style="color: var(--text-muted); font-size: 0.9rem;">لا توجد طلبات جديدة معلقة.</p>';
+                return;
+            }
+
+            pendingContainer.innerHTML = pending.map(c => `
+                <div class="pending-item">
+                    <div>
+                        <strong>${escapeHtml(c.name)}:</strong>
+                        <p style="font-size: 0.9rem; color: #444;">${escapeHtml(c.text)}</p>
+                    </div>
+                    <div style="display: flex; gap: 5px;">
+                        <button onclick="approveComment(${c.id})" class="btn btn-sm btn-success"><i class="fa-solid fa-check"></i> قبول</button>
+                        <button onclick="rejectComment(${c.id})" class="btn btn-sm btn-danger"><i class="fa-solid fa-xmark"></i> رفض</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // قبول المشاركة
+        function approveComment(id) {
+            comments = comments.map(c => c.id === id ? {...c, status: 'approved'} : c);
+            saveAndRender();
+        }
+
+        // رفض وحذف المشاركة
+        function rejectComment(id) {
+            comments = comments.filter(c => c.id !== id);
+            saveAndRender();
+        }
+
+        // تسجيل دخول المشرف
+        function loginAdmin() {
+            const pass = document.getElementById('adminPass').value;
+            if(pass === '1289') { // كلمة المرور الافتراضية
+                document.getElementById('adminAuth').style.display = 'none';
+                document.getElementById('adminContent').style.display = 'block';
+                renderPending();
+            } else {
+                alert('كلمة المرور غير صحيحة!');
+            }
+        }
+
+        // حماية من ثغرات XSS
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.innerText = text;
+            return div.innerHTML;
+        }
+
+        // التشغيل الأولي
+        renderApproved();
+    </script>
+</body>
+</html>
