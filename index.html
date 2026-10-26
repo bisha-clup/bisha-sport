@@ -39,26 +39,45 @@
         header {
             background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
             color: var(--white);
-            padding: 30px 20px;
+            padding: 25px 20px;
             text-align: center;
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
             position: relative;
         }
 
+        /* صف الشعارين: الجامعة يمين - العنوان بالنص - النادي يسار */
         header .logo-container {
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 18px;
-            margin-bottom: 10px;
+            justify-content: space-between;
+            gap: 15px;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
-        /* تنسيق صورة الشعار بمقاس 80 في 80 */
-        header .club-logo {
+        header .header-title {
+            flex: 1;
+            text-align: center;
+        }
+
+        /* إطار أبيض للشعارين عشان يبانون بوضوح على الخلفية الزرقاء */
+        header .logo-box {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 6px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header .club-logo,
+        header .uni-logo {
             width: 80px;
             height: 80px;
             object-fit: contain;
-            border-radius: 8px;
+            display: block;
         }
 
         header h1 {
@@ -70,6 +89,21 @@
             font-size: 1.15rem;
             opacity: 0.9;
             font-weight: 500;
+        }
+
+        /* تصغير الشعارات والعنوان في الجوال */
+        @media (max-width: 600px) {
+            header .club-logo,
+            header .uni-logo {
+                width: 55px;
+                height: 55px;
+            }
+            header h1 {
+                font-size: 1.4rem;
+            }
+            header p {
+                font-size: 1rem;
+            }
         }
 
         /* الحاوية الرئيسية */
@@ -283,10 +317,22 @@
     <!-- الشريط العلوي -->
     <header>
         <div class="logo-container">
-            <img src="WhatsApp Image 2026-10-24 at 6.23.32 PM.jpeg" alt="شعار نادي علوم الرياضة" class="club-logo">
-            <h1>نادي علوم الرياضة</h1>
+            <!-- شعار جامعة بيشة (يمين) -->
+            <div class="logo-box">
+                <img src="bisha-logo.png" alt="شعار جامعة بيشة" class="uni-logo">
+            </div>
+
+            <!-- العنوان (بالنص) -->
+            <div class="header-title">
+                <h1>نادي علوم الرياضة</h1>
+                <p>جامعة بيشة</p>
+            </div>
+
+            <!-- شعار نادي علوم الرياضة (يسار) -->
+            <div class="logo-box">
+                <img src="WhatsApp Image 2026-10-24 at 6.23.32 PM.jpeg" alt="شعار نادي علوم الرياضة" class="club-logo">
+            </div>
         </div>
-        <p>جامعة بيشة</p>
     </header>
 
     <div class="container">
@@ -331,7 +377,7 @@
                     <li>الالتزام بالروح الرياضية واحترام المنافسين والحكام.</li>
                     <li>تمنع الاعتراضات غير اللائقة أو السلوك غير الرياضي.</li>
                     <li>الحضور قبل موعد المباراة بـ 15 دقيقة على الأقل.</li>
-                    <li>الفريق المتأخر عن الموعد المحدد قد يُعدّ مستحقاً وفق قرار اللجنة المنظمة.</li>
+                    <li>الفريق المتأخر عن الموعد المحدد قد يُعدّ منسحباً وفق قرار اللجنة المنظمة.</li>
                     <li>الالتزام بملبس الزي الرياضي المناسب واتباع تعليمات المنظمين.</li>
                     <li>قرارات اللجنة المنظمة والحكام ملزمة.</li>
                 </ul>
