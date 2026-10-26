@@ -11,8 +11,8 @@
     
     <style>
         :root {
-            --primary-blue: #0b2f56; 
-            --secondary-blue: #0076a8; 
+            --primary-blue: #003366; /* الأزرق الملكي الخاص بجامعة بيشة */
+            --secondary-blue: #0056b3;
             --accent-gold: #d4af37;
             --bg-light: #f4f7fa;
             --white: #ffffff;
@@ -35,75 +35,41 @@
             line-height: 1.6;
         }
 
-        /* ----------------------------------------------------
-           تنسيق الهيدر العلوي الجديد والمطابق للديزاين
-        ---------------------------------------------------- */
-        header.custom-header {
-            background-color: #f7f9fa;
-            position: relative;
-            padding: 40px 20px 35px 20px;
+        /* الهيدر / الشريط العلوي */
+        header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: var(--white);
+            padding: 30px 20px;
             text-align: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            border-bottom: 1px solid #e2e8f0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            position: relative;
         }
 
-        /* حاوية الشعارات مع الفاصل */
-        .header-logos {
+        header .logo-container {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 25px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
+            gap: 18px;
+            margin-bottom: 10px;
         }
 
-        /* تنسيق شعار نادي علوم الرياضة وشعار جامعة بيشة */
-        .club-logo-img, .bisha-logo-svg {
-            height: 90px;
-            width: auto;
+        /* تنسيق صورة الشعار بمقاس 80 في 80 */
+        header .club-logo {
+            width: 80px;
+            height: 80px;
             object-fit: contain;
+            border-radius: 8px;
         }
 
-        .header-divider {
-            width: 2px;
-            height: 75px;
-            background-color: #0b2f56;
-            opacity: 0.3;
-        }
-
-        /* النصوص العلوية */
-        .header-titles {
-            margin-top: 10px;
-        }
-
-        .header-titles .college-name {
-            font-size: 1.9rem;
+        header h1 {
+            font-size: 2.2rem;
             font-weight: 800;
-            color: #0b2f56;
-            margin-bottom: 6px;
         }
 
-        .header-titles .dept-name {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #008eb0;
-        }
-
-        /* الزخرفة المثلثية باللون الأزرق والسماوي أسفل الهيدر */
-        .zigzag-border {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 14px;
-            background-image: 
-                linear-gradient(135deg, #008eb0 25%, transparent 25%),
-                linear-gradient(225deg, #008eb0 25%, transparent 25%),
-                linear-gradient(315deg, #0b2f56 25%, transparent 25%),
-                linear-gradient(45deg, #0b2f56 25%, transparent 25%);
-            background-position: -12px 0, -12px 0, 0 0, 0 0;
-            background-size: 24px 24px;
-            background-repeat: repeat-x;
+        header p {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            font-weight: 500;
         }
 
         /* الحاوية الرئيسية */
@@ -230,3 +196,199 @@
         }
 
         .btn-register {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #28a745, #218838);
+            color: #ffffff;
+            font-size: 1.25rem;
+            font-weight: 800;
+            padding: 14px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-register:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+            background: linear-gradient(135deg, #218838, #1e7e34);
+        }
+
+        .contact-box {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .contact-box a {
+            color: #25d366;
+            font-weight: 800;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        /* تنسيقات الرسالة والأهداف */
+        .message-box {
+            background: #f8fafc;
+            border-right: 4px solid var(--accent-gold);
+            padding: 18px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            line-height: 1.8;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .goals-list {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .goals-list li {
+            position: relative;
+            padding-right: 25px;
+            margin-bottom: 10px;
+            font-size: 0.98rem;
+            color: #444;
+        }
+
+        .goals-list li::before {
+            content: "\f0a3";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            right: 0;
+            color: var(--accent-gold);
+        }
+
+        /* الفوتر / أسفل الصفحة */
+        footer {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- الشريط العلوي -->
+    <header>
+        <div class="logo-container">
+            <img src="WhatsApp Image 2026-10-24 at 6.23.32 PM.jpeg" alt="شعار نادي علوم الرياضة" class="club-logo">
+            <h1>نادي علوم الرياضة</h1>
+        </div>
+        <p>جامعة بيشة</p>
+    </header>
+
+    <div class="container">
+
+        <!-- قسم الإعلانات والفعاليات -->
+        <div class="card">
+            <h2 class="section-title"><i class="fa-solid fa-bullhorn"></i> قسم الإعلانات والفعاليات</h2>
+            
+            <div class="announcement-banner">
+                <div class="announcement-header">
+                    <h3>🏆 بطولة كلية التربية والتنمية البشرية لكرة القدم</h3>
+                    <span class="announcement-badge"><i class="fa-regular fa-calendar-days"></i> فترة التسجيل: من الأحد 25/10 حتى الخميس 29/10</span>
+                </div>
+
+                <div class="info-grid">
+                    <div class="info-box">
+                        <i class="fa-solid fa-users"></i>
+                        <h4>عدد الفرق</h4>
+                        <p>6 فرق (الأولوية للأسبق)</p>
+                    </div>
+                    <div class="info-box">
+                        <i class="fa-regular fa-clock"></i>
+                        <h4>موعد البطولة</h4>
+                        <p>من 21/5 إلى 25/5</p>
+                    </div>
+                    <div class="info-box">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <h4>المكان</h4>
+                        <p>الملعب الجامعي (بالكلية)</p>
+                    </div>
+                    <div class="info-box">
+                        <i class="fa-solid fa-user-check"></i>
+                        <h4>الفئة المستهدفة</h4>
+                        <p>طلاب كلية التربية والتنمية البشرية</p>
+                    </div>
+                </div>
+
+                <h4 style="color: var(--primary-blue); margin-top: 15px;"><i class="fa-solid fa-clipboard-list"></i> الشروط والتعليمات:</h4>
+                <ul class="rules-list">
+                    <li>المشاركة لطلاب كلية التربية والتنمية البشرية فقط.</li>
+                    <li>يتكون كل فريق من عدد محدد من اللاعبين، مع تحديد قائد للفريق.</li>
+                    <li>الالتزام بالروح الرياضية واحترام المنافسين والحكام.</li>
+                    <li>تمنع الاعتراضات غير اللائقة أو السلوك غير الرياضي.</li>
+                    <li>الحضور قبل موعد المباراة بـ 15 دقيقة على الأقل.</li>
+                    <li>الفريق المتأخر عن الموعد المحدد قد يُعدّ مستحقاً وفق قرار اللجنة المنظمة.</li>
+                    <li>الالتزام بملبس الزي الرياضي المناسب واتباع تعليمات المنظمين.</li>
+                    <li>قرارات اللجنة المنظمة والحكام ملزمة.</li>
+                </ul>
+
+                <!-- زر التسجيل المباشر -->
+                <div class="register-btn-container">
+                    <a href="https://forms.gle/N26EQaqUA7MEytut6" target="_blank" class="btn-register">
+                        <i class="fa-solid fa-pen-to-square"></i> التسجيل الآن
+                    </a>
+                </div>
+
+                <div class="contact-box">
+                    <p><i class="fa-brands fa-whatsapp"></i> للتسجيل والتواصل عبر واتساب:</p>
+                    <p style="font-size: 1.2rem; margin-top: 5px;"><strong>عبدالله جلوي</strong> | <a href="https://wa.me/966501561565" target="_blank">0501561565</a></p>
+                    <p style="font-size: 0.85rem; opacity: 0.8; margin-top: 5px;">بكم .. نحقق التميز</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- قسم عن النادي -->
+        <div class="card">
+            <h2 class="section-title"><i class="fa-solid fa-circle-info"></i> عن نادي علوم الرياضة</h2>
+            <p style="color: #444; font-size: 1.05rem;">
+                يسعى <strong>نادي علوم الرياضة بجامعة بيشة</strong> إلى تعزيز النشاط البدني والرياضي بين الطلاب، واكتشاف المواهب الرياضية وتنميتها، وتنظيم البطولات والفعاليات الرياضية التي تساهم في بناء بيئة جامعية حيوية وصحية.
+            </p>
+        </div>
+
+        <!-- قسم رسالة النادي والأهداف -->
+        <div class="card">
+            <h2 class="section-title"><i class="fa-solid fa-envelope-open-text"></i> رسالة وأهداف النادي</h2>
+            
+            <h3 style="color: var(--primary-blue); font-size: 1.15rem; margin-bottom: 10px;"><i class="fa-solid fa-quote-right"></i> رسالة النادي:</h3>
+            <div class="message-box">
+                إن نادي علوم الرياضة بجامعة بيشة يضع في مقدمة أولوياته بناء مجتمع رياضي واعد يمارس الرياضة كنمط حياة مستدام.<br>
+                نسعى جاهدين للارتقاء بالمستوى الرياضي والبدني لطلاب جامعة بيشة، وتوفير البيئة المحفزة لاكتشاف وصقل المواهب الإبداعية.<br>
+                كما نعمل على ترسيخ ثقافة النشاط البدني والمنافسة الشريفة ونشر الوعي الصحي الرياضي في جميع أرجاء مدينة بيشة.<br>
+                نؤمن بأن الرياضة ركيزة أساسية لتطوير المهارات الشخصية والقيادية وبناء الفرد الصالح والمجتمع الحيوي.<br>
+                وتمتد رسالتنا لتشمل تنظيم وتطوير البطولات الكبرى والبرامج التثقيفية والرياضية لمواكبة تطلعات رؤية المملكة الطموحة.
+            </div>
+
+            <h3 style="color: var(--primary-blue); font-size: 1.15rem; margin-top: 20px; margin-bottom: 10px;"><i class="fa-solid fa-bullseye"></i> أهداف النادي:</h3>
+            <ul class="goals-list">
+                <li>نشر الوعي الرياضي والصحي بين كافة طلاب الجامعة وجميع فئات المجتمع في مدينة بيشة.</li>
+                <li>اكتشاف واستقطاب المواهب الرياضية الشابة وصقل قدراتها للتمثيل المشرّف في البطولات المحلية والدولية.</li>
+                <li>إقامة البطولات والأنشطة الرياضية التنافسية والترويحية على مدار العام الأكاديمي.</li>
+                <li>تعزيز قيم الروح الرياضية والعمل الجماعي والإنضباط والقيادة لدى الطلاب.</li>
+                <li>استثمار الأوقات والحديث بأثر إيجابي يساهم في بناء جيل واعد وبنية جسدية وفكرية متكاملة.</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- الفوتر -->
+    <footer>
+        <p>نادي علوم الرياضة ©️ 2026</p>
+        <p style="font-size: 0.85rem; opacity: 0.8; margin-top: 4px;">جامعة بيشة</p>
+    </footer>
+
+</body>
+</html>
