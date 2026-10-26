@@ -11,8 +11,8 @@
     
     <style>
         :root {
-            --primary-blue: #0b2f56; /* الأزرق الغامق للكحلي */
-            --secondary-blue: #0076a8; /* الأزرق السماوي/المتوسط */
+            --primary-blue: #0b2f56; 
+            --secondary-blue: #0076a8; 
             --accent-gold: #d4af37;
             --bg-light: #f4f7fa;
             --white: #ffffff;
@@ -36,61 +36,60 @@
         }
 
         /* ----------------------------------------------------
-           تنسيق الهيدر / الترويسة الجديدة المطابقة للصورة
+           تنسيق الهيدر العلوي الجديد والمطابق للديزاين
         ---------------------------------------------------- */
         header.custom-header {
             background-color: #f7f9fa;
             position: relative;
             padding: 40px 20px 35px 20px;
             text-align: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
             border-bottom: 1px solid #e2e8f0;
         }
 
-        /* الشعارات والعارضة الوسطى */
+        /* حاوية الشعارات مع الفاصل */
         .header-logos {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 25px;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             flex-wrap: wrap;
         }
 
-        .header-logo-img {
-            max-height: 110px;
+        /* تنسيق شعار نادي علوم الرياضة وشعار جامعة بيشة */
+        .club-logo-img, .bisha-logo-svg {
+            height: 90px;
             width: auto;
             object-fit: contain;
         }
 
         .header-divider {
             width: 2px;
-            height: 80px;
+            height: 75px;
             background-color: #0b2f56;
             opacity: 0.3;
         }
 
-        /* النصوص */
+        /* النصوص العلوية */
         .header-titles {
             margin-top: 10px;
         }
 
         .header-titles .college-name {
-            font-size: 2rem;
+            font-size: 1.9rem;
             font-weight: 800;
             color: #0b2f56;
             margin-bottom: 6px;
-            letter-spacing: -0.5px;
         }
 
         .header-titles .dept-name {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             font-weight: 700;
             color: #008eb0;
         }
 
-        /* التموجات/الأسنان الزخرفية السفلية */
+        /* الزخرفة المثلثية باللون الأزرق والسماوي أسفل الهيدر */
         .zigzag-border {
             position: absolute;
             bottom: 0;
@@ -102,11 +101,7 @@
                 linear-gradient(225deg, #008eb0 25%, transparent 25%),
                 linear-gradient(315deg, #0b2f56 25%, transparent 25%),
                 linear-gradient(45deg, #0b2f56 25%, transparent 25%);
-            background-position: 
-                -12px 0,
-                -12px 0,
-                0 0,
-                0 0;
+            background-position: -12px 0, -12px 0, 0 0, 0 0;
             background-size: 24px 24px;
             background-repeat: repeat-x;
         }
@@ -235,140 +230,3 @@
         }
 
         .btn-register {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background: linear-gradient(135deg, #28a745, #218838);
-            color: #ffffff;
-            font-size: 1.25rem;
-            font-weight: 800;
-            padding: 14px 35px;
-            border-radius: 50px;
-            text-decoration: none;
-            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .btn-register:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
-            background: linear-gradient(135deg, #218838, #1e7e34);
-        }
-
-        .contact-box {
-            background-color: var(--primary-blue);
-            color: var(--white);
-            text-align: center;
-            padding: 15px;
-            border-radius: 10px;
-            margin-top: 20px;
-        }
-
-        .contact-box a {
-            color: #25d366;
-            font-weight: 800;
-            text-decoration: none;
-            font-size: 1.1rem;
-        }
-
-        /* تنسيقات الرسالة والأهداف */
-        .message-box {
-            background: #f8fafc;
-            border-right: 4px solid var(--accent-gold);
-            padding: 18px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            line-height: 1.8;
-            font-size: 1rem;
-            color: #333;
-        }
-
-        .goals-list {
-            list-style: none;
-            margin-top: 10px;
-        }
-
-        .goals-list li {
-            position: relative;
-            padding-right: 25px;
-            margin-bottom: 10px;
-            font-size: 0.98rem;
-            color: #444;
-        }
-
-        .goals-list li::before {
-            content: "\f0a3";
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            position: absolute;
-            right: 0;
-            color: var(--accent-gold);
-        }
-
-        /* الفوتر / أسفل الصفحة */
-        footer {
-            background-color: var(--primary-blue);
-            color: var(--white);
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-            font-size: 0.95rem;
-        }
-    </style>
-</head>
-<body>
-
-    <!-- الشريط العلوي / الهيدر المحدث بنفس تصميم الصورة -->
-    <header class="custom-header">
-        <div class="header-logos">
-            <!-- شعار نادي علوم الرياضة (تأكد من اسم الصورة لديك) -->
-            <img src="WhatsApp Image 2026-10-24 at 6.23.32 PM.jpeg" alt="شعار نادي علوم الرياضة" class="header-logo-img">
-            
-            <div class="header-divider"></div>
-            
-            <!-- شعار جامعة بيشة (تأكد من وضع اسم الصورة الخاصة بشعار جامعة بيشة) -->
-            <img src="bisha_university_logo.png" alt="شعار جامعة بيشة" class="header-logo-img">
-        </div>
-
-        <div class="header-titles">
-            <h1 class="college-name">كلية التربية والتنمية البشرية</h1>
-            <p class="dept-name">قسم علوم الرياضة · نادي علوم الرياضة</p>
-        </div>
-
-        <!-- التموجات والزخرفة المثلثية باللونين الأزرق والسماوي -->
-        <div class="zigzag-border"></div>
-    </header>
-
-    <div class="container">
-
-        <!-- قسم الإعلانات والفعاليات -->
-        <div class="card">
-            <h2 class="section-title"><i class="fa-solid fa-bullhorn"></i> قسم الإعلانات والفعاليات</h2>
-            
-            <div class="announcement-banner">
-                <div class="announcement-header">
-                    <h3>🏆 بطولة كلية التربية والتنمية البشرية لكرة القدم</h3>
-                    <span class="announcement-badge"><i class="fa-regular fa-calendar-days"></i> فترة التسجيل: من الأحد 25/10 حتى الخميس 29/10</span>
-                </div>
-
-                <div class="info-grid">
-                    <div class="info-box">
-                        <i class="fa-solid fa-users"></i>
-                        <h4>عدد الفرق</h4>
-                        <p>6 فرق (الأولوية للأسبق)</p>
-                    </div>
-                    <div class="info-box">
-                        <i class="fa-regular fa-clock"></i>
-                        <h4>موعد البطولة</h4>
-                        <p>من 21/5 إلى 25/5</p>
-                    </div>
-                    <div class="info-box">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <h4>المكان</h4>
-                        <p>الملعب الجامعي (بالكلية)</p>
-                    </div>
-                    <div class="info-box">
-                        <i class="fa-solid fa-user-check"></i>
-                        <h4>الفئة المستهدفة</h4>
-                        <p>طلاب كلية التربية والتنمية
