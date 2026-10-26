@@ -45,22 +45,29 @@
             position: relative;
         }
 
-        /* صف الشعارين: الجامعة يمين - العنوان بالنص - النادي يسار */
-        header .logo-container {
+        /* حاوية الشعارات والعنوان فوق */
+        header .header-content {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: space-between;
             gap: 15px;
             max-width: 900px;
             margin: 0 auto;
         }
 
+        /* صف الشعارات: الجامعة يمين - النادي يسار (بينهما مسافة بسيطة) */
+        header .logos-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px; /* المسافة البسيطة بين الشعارين */
+        }
+
         header .header-title {
-            flex: 1;
             text-align: center;
         }
 
-        /* إطار أبيض للشعارين عشان يبانون بوضوح على الخلفية الزرقاء */
+        /* إطار أبيض للشعارين لتوضيحهما على الخلفية الزرقاء */
         header .logo-box {
             background: var(--white);
             border-radius: 12px;
@@ -74,8 +81,8 @@
 
         header .club-logo,
         header .uni-logo {
-            width: 80px;
-            height: 80px;
+            width: 85px;
+            height: 85px;
             object-fit: contain;
             display: block;
         }
@@ -95,11 +102,11 @@
         @media (max-width: 600px) {
             header .club-logo,
             header .uni-logo {
-                width: 55px;
-                height: 55px;
+                width: 60px;
+                height: 60px;
             }
             header h1 {
-                font-size: 1.4rem;
+                font-size: 1.5rem;
             }
             header p {
                 font-size: 1rem;
@@ -316,21 +323,24 @@
 
     <!-- الشريط العلوي -->
     <header>
-        <div class="logo-container">
-            <!-- شعار جامعة بيشة (يمين) -->
-            <div class="logo-box">
-                <img src="bisha-logo.png" alt="شعار جامعة بيشة" class="uni-logo">
+        <div class="header-content">
+            <!-- الشعاران جنب بعض في الأعلى: الجامعة (يمين) والنادي (يسار) -->
+            <div class="logos-wrapper">
+                <!-- شعار جامعة بيشة -->
+                <div class="logo-box">
+                    <img src="input_file_0.png" alt="شعار جامعة بيشة" class="uni-logo">
+                </div>
+
+                <!-- شعار نادي علوم الرياضة -->
+                <div class="logo-box">
+                    <img src="WhatsApp Image 2026-10-24 at 6.23.32 PM.jpeg" alt="شعار نادي علوم الرياضة" class="club-logo">
+                </div>
             </div>
 
-            <!-- العنوان (بالنص) -->
+            <!-- العنوان أسفل الشعارات -->
             <div class="header-title">
                 <h1>نادي علوم الرياضة</h1>
                 <p>جامعة بيشة</p>
-            </div>
-
-            <!-- شعار نادي علوم الرياضة (يسار) -->
-            <div class="logo-box">
-                <img src="WhatsApp Image 2026-10-24 at 6.23.32 PM.jpeg" alt="شعار نادي علوم الرياضة" class="club-logo">
             </div>
         </div>
     </header>
